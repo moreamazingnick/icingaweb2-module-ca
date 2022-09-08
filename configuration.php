@@ -3,10 +3,10 @@
 use Icinga\Application\Config;
 use Icinga\Authentication\Auth;
 
+/** @var \Icinga\Application\Modules\Module $this */
 $auth = Auth::getInstance();
 if ($auth->hasPermission('ca/overview')){
-   $this->menuSection('System')
-     ->add('Certificate Authority')
+   $this->menuSection('Icinga2 CA')->setIcon('check')
      ->setUrl('ca');
 }
 

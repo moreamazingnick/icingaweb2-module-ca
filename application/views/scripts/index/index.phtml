@@ -8,7 +8,7 @@
 <?php return; endif ?>
 <?php if ($this->sign): ?>
     <h2><?= $this->translate('Signing Certificate...') ?></h2>
-    <pre><?= $this->sign ?></pre>
+    <pre><?= $this->sign?></pre>
 <?php return; endif ?>
     <h2><?= $this->translate('Certificate List') ?></h2>
     <table class="name-value-table">
@@ -25,7 +25,7 @@
 <?php foreach ($calist as $cert): ?>
 	<tr>
           <td class="left"><?php print $cert['fingerprint']; ?></td>
-          <td class="left"><?php if ($cert['signed'] != "*") { 
+          <td class="left"><?php if ($cert['signed'] != "yes") {
 		printf('<a href="%s"%s>%s</a>',
 			$this->url('ca', array('fingerprint' => $cert['fingerprint']) ),
          		$this->propertiesToString(array(

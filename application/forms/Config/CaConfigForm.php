@@ -21,6 +21,10 @@ class CaConfigForm extends ConfigForm
                 [
                     'required'      => true,
                     'label'         => $this->translate('Run icingacli as user'),
+                    'value'         => "nagios",
+                    'description' => $this->translate(
+                        'use nagios for ubuntu/debian and icinga for redhat/centos'
+                    ),
                 ]
             ],
             [
@@ -29,6 +33,7 @@ class CaConfigForm extends ConfigForm
                 [
                     'required'      => true,
                     'label'         => $this->translate('Sudo path'),
+                    'value'         => "/usr/bin/sudo"
                 ]
             ],
             [
@@ -37,8 +42,34 @@ class CaConfigForm extends ConfigForm
                 [
                     'required'      => true,
                     'label'             => $this->translate('icinga2 binary path'),
+                    'value'             => "/usr/sbin/icinga2"
                 ]
             ],
         ]);
+        $this->addElement(
+            'checkbox',
+            'config_hide_warnings',
+            array(
+                'required' => false,
+                'label' => $this->translate('Hide all Warnings'),
+                'description' => $this->translate(
+                    'hides lines containing warning/Application'
+                ),
+                'value' => 0
+            )
+        );
+
+        $this->addElement(
+            'checkbox',
+            'config_hide_rlimit',
+            array(
+                'required' => false,
+                'label' => $this->translate('Hide all RLIMIT_'),
+                'description' => $this->translate(
+                    'hides lines containing RLIMIT_'
+                ),
+                'value' => 1
+            )
+        );
     }
 }
