@@ -42,8 +42,11 @@ Clone the repository via Git to your Icinga Web 2 `modules` directory.
 
 ### Configuration
 Add this to sudoers file of your choice
+
 nagios should be the user you set in the modules settings
+
 www-data should be the user whos running your webserver
+
 ```
 www-data ALL = (nagios) NOPASSWD: /usr/sbin/icinga2 ca sign *
 www-data ALL = (nagios) NOPASSWD: /usr/sbin/icinga2 ca list --all --json
