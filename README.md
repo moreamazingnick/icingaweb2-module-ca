@@ -56,13 +56,13 @@ www-data ALL = (nagios) NOPASSWD: /usr/sbin/icinga2 --version
 
 ## Screenshots
 
-Sign Screenshot:
+Request Overview Screenshot:
 
-![CA - Sign Menu](doc/screenshot/sign.png)
+![CA - Request Menu](doc/screenshot/module.png)
 
-Module Information Screenshot:
+Sign Process Screenshot:
 
-![CA - Module Info](doc/screenshot/module.png)
+![CA - Sign Process](doc/screenshot/sign.png)
 
 Module Config Screenshot:
 
