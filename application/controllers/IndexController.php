@@ -2,7 +2,6 @@
 
 namespace Icinga\Module\Ca\Controllers;
 
-use Dompdf\Exception;
 use Icinga\Web\Controller;
 use Icinga\Web\Notification;
 use Icinga\Web\UrlParams;
@@ -164,7 +163,7 @@ class IndexController extends Controller
 
                     }
 
-                } catch (Exception $e) {
+                } catch (\Throwable $e) {
                     Notification::error($e->getMessage());
                     throw $e;
                 }
